@@ -4,6 +4,7 @@ import { PaymentService } from './payment.service';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MercadoPagoConfig } from 'mercadopago';
 import { Config } from 'mercadopago/dist/types';
+import { ShopsModule } from 'src/shops/shops.module';
 
 const paymentProvider = {
   provide: 'MERCADOPAGO_CLIENT',

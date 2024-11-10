@@ -1,5 +1,5 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { MercadoPagoConfig, Preference } from 'mercadopago';
+import { MercadoPagoConfig, Preference, } from 'mercadopago';
 
 @Injectable()
 export class PaymentService {
@@ -10,7 +10,6 @@ export class PaymentService {
     }
 
     async generateURI(items: any): Promise<any>{
-        console.log(items)
         const body: any = {
             payment_methods: {
                 excluded_payment_methods: [],
@@ -31,9 +30,8 @@ export class PaymentService {
               ], */
             items,
             back_urls: {
-                success: 'https://www.nomark.co/payment/success',
-                failure: 'https://www.nomark.co/payment/failure',
-                pending: 'https://www.nomark.co/payment/pending'
+                success: 'https://3000-idx-api-rest-no-mark-1729718476949.cluster-fnjdffmttjhy2qqdugh3yehhs2.cloudworkstations.dev/shops/paymentResponse',
+                failure: 'https://3000-idx-api-rest-no-mark-1729718476949.cluster-fnjdffmttjhy2qqdugh3yehhs2.cloudworkstations.dev/shops/paymentResponse',
             },
             auto_return: "approved"
         }
